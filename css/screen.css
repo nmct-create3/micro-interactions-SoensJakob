@@ -671,12 +671,15 @@ more padding on the right to avoid overlap
     padding-bottom: var(--global-whitespace-sm);
     font-size: 14px;
     line-height: 16px;
-    color: var(--label-color);
+    border: var(--global-borderWidth) solid var(--input-borderColor, var(--global-input-borderColor));
+    color: var(--label-color, var(--global-color-neutral-xx-dark));
 }
 
 .c-label--option {
     padding-bottom: 0;
 }
+
+
 
 /*
     Component: Button
@@ -812,6 +815,65 @@ more padding on the right to avoid overlap
     opacity: 1; /* Show the symbol when the invisible checkbox/radio button is checked */
     transform: scale(1);
 }
+
+
+/*
+    Component: Password Toggle
+    ---
+    Visually change a checkbox into a visiblity symbol
+*/
+
+.c-password-toggle-container {
+    position: relative;
+    display: block;
+}
+
+.c-input--password-with-toggle {
+    
+}
+
+.c-password-toggle {
+    position: absolute;
+    right: 0;
+    top: 0; 
+    bottom:0;
+}
+
+.c-password-toggle__checkbox {
+    
+}
+
+.c-password-toggle__label {
+    display: flex;
+    align-items: center;
+    padding:14px 16px;
+}
+
+.c-password-toggle__symbol {
+    display: block;
+    fill: var(--global-color-neutral-x-light);
+    width: 20px;
+    height: 20px;
+}
+
+.c-password-toggle__symbol--hide {
+    display: block;
+}
+
+.c-password-toggle__symbol--show  {
+    display: none;
+}
+
+.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide{
+    display: none;
+}
+
+.c-password-toggle__checkbox:checked +  .c-password-toggle__label .c-password-toggle__symbol--show{
+    display: block;
+}
+
+
+
 
 /*
     Component: Custom Toggle
